@@ -7,8 +7,37 @@ project:
     dependencies:
         - github: 'https://github.com/SalesforceFoundation/HEDAP'
         - github: 'https://github.com/SFDO-Community/OutboundFunds'
+    source:
+        ignore:
+            - "CompactLayout: Account.hed__HEDA_Account_Compact_Layout"
+            - "CompactLayout: Contact.hed__HEDA_Contact_Compact_Layout"
+            - "CustomField: Contact.Primary_Academic_Program__c"
+            - "CustomField: Contact.Primary_Department__c"
+            - "CustomField: Contact.Primary_Educational_Institution__c"
+            - "CustomField: Contact.Primary_Sports_Organization__c"
+            - "ListView: Opportunity.Default_Opportunity_Pipeline"
+            - "Profile: Admin"
+            - "Profile: Custom: Sales Profile"
+            - "Profile: Custom: Marketing Profile"
+            - "Profile: Custom: Support Profile"
+            - "RecordType: Account.Academic_Program"
+            - "RecordType: Account.Administrative"
+            - "RecordType: Account.Business_Organization"
+            - "RecordType: Account.Educational_Institution"
+            - "RecordType: Account.HH_Account"
+            - "RecordType: Account.Sports_Organization"
+            - "RecordType: Account.University_Department"
+            - "WebLink: Campaign.ViewCampaignInfluenceReport"
 
-
+tasks:
+    list_changes:
+        options:
+            exclude_namespace:
+                - hed
+    retrieve_changes:
+        options:
+            exclude_namespace:
+                - hed
 
 orgs:
     scratch:
